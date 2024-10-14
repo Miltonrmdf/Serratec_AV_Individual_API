@@ -1,0 +1,80 @@
+Avaliação: Desenvolvimento de API REST para um Restaurante Oriental
+-----------------------------------------------
+Estudar e aplicar tudo, menos:
+
+- Consultas DTOS
+- Consultas JPQL
+----------------------------------------------
+Projeto
+
+1.Ir so site: https://start.spring.io/ e configurar desse jeito:
+- Project = Mavem
+- Language= Java
+- Spring Boot = 3.3.4
+- Project Metadata
+	Group = org.serratec.restaurante
+	Artifact= restaurante
+	Name= restaurante
+	Descripition = Avaliação: Desenvolvimento de API REST para um Restaurante Oriental
+	Package name=org.serratec.restaurante
+	Packaging =Jar
+	Java=17
+- Dependencies 
+	Spring Web 
+	Spring Data JPA 
+	Validation 
+	flywaydb
+	Spring Boot DevTools Developer Tools
+	PostgreSQL Driver SQL
+-----------------------------------------------------------------------------
+2. Editar arq aplication.properties
+
+spring.application.name=restaurante
+spring.datasource.url=jdbc:postgresql://localhost:5432/restaurante
+spring.datasource.username=postgres
+spring.datasource.password=123456
+##spring.jpa.hibernate.ddl-auto=update
+##spring.jpa.show-sql=true
+##spring.jpa.format-sql=true
+-----------------------------------------------------------------------------
+3.Criar um pacote para  cada classe
+#org.serratec.restaurante
+#org.serratec.restaurante.controller
+#org.serratec.restaurante.model
+#org.serratec.restaurante.repository
+#org.serratec.restaurante.service
+-----------------------------------------------------------------------------
+4 criar as TABELAS, ENTIDADES, ENUNS em seus devidos pacotes 
+
+TABELA CLIENTES (#org.serratec.restaurante)
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
+	private String nome;
+	private String cnh;
+	private String telefone;
+
+TABELA PRATOS (#org.serratec.restaurante)
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
+	private String nome_prato;
+	private String descricao;
+	private String valor;
+
+TABELA PEDIDOS (#org.serratec.restaurante)
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
+    	private id cliente;
+   	private id pratos;
+
+CLASSE RESTAURANTECONTROLLER (#org.serratec.restaurante.controller)
+---------------------------------------------------------------
+5.Criar e verificar as validações
+6. Criação da classe controller e Interface repository 
+7.Criação dos scripts na pasta migration
+
+
